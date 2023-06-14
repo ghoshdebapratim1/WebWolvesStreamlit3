@@ -8,10 +8,10 @@ import pandas as pd
 #look for more information here https://docs.streamlit.io/library/cheatsheet
 
 #adding title
-st.title("This is streamlit")
+st.title("Cameron is a superstar Basketball player!")
 
 #adding discription to your website
-st.text('Discription')
+st.text('eastliverpool potters')
 
 #Thesis here
 st.header('Thesis')
