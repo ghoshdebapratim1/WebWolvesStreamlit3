@@ -101,7 +101,7 @@ st.header('Deb Question : Which team has the highest power rating in 2019?')
 
 df_plot=df[df['YEAR']==2019]
 power_rating=df_plot.groupby('TEAM')['BARTHAG'].max().reset_index()
-power_rating.sort_values(by='BARTHAG',ascending=False)
+power_rating=power_rating.sort_values(by='BARTHAG',ascending=False).head(15)
 fig=px.bar(power_rating,x='TEAM',y='BARTHAG')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
