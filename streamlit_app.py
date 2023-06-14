@@ -78,7 +78,7 @@ st.header("Gemma Question : what was North Carolina's power rating in 2016?? ")
 df_plot=df[df['TEAM']=='North Carolina']
 pr = df_plot.groupby("YEAR")[["BARTHAG"]].sum().reset_index()
 pr.sort_values(by="BARTHAG", ascending=False).head(15)
-fig = px.bar(count, x="YEAR", y="BARTHAG")
+fig = px.bar(pr, x="YEAR", y="BARTHAG")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
