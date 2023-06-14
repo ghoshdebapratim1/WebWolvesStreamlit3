@@ -64,7 +64,9 @@ st.table(df.info())
 #adding graphs by images
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
+## Filtering out the team gonzaga from our dataset 
 df_plot=df[df['TEAM']=='Gonzaga']
+## We want to Sum the number of wins by the team gonzaga for each year.
 count = df_plot.groupby("YEAR")[["W"]].sum().reset_index()
 count = count.sort_values(by="W", ascending=False).head(15)
 fig = px.bar(count, x="YEAR", y="W")
@@ -73,9 +75,16 @@ st.plotly_chart(fig)
 
 st.header("Gemma Question : what was North Carolina's power rating in 2016?? ")
 
+df_plot=df[df['TEAM']=='North Carolina']
+pr = df_plot.groupby("YEAR")[["BARTHAG"]].sum().reset_index()
+pr.sort_values(by="BARTHAG", ascending=False).head(15)
+fig = px.bar(count, x="YEAR", y="BARTHAG")
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
 
 st.header('Cameron Conley Question : How many freethrows have the lakers made? ')
 st.header('Melanie Question : what was texas tech free throw rate in 2019 ')
+
 st.header('Livia Question : how many games has the wissconson played in the year of 2015?')
 st.header('Cameron Estell : what was the point shooting percentage last season for the wisconsin')
 st.header('Natalia Question : what was gonzas turn over percentage commited in 2017')
