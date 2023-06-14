@@ -13,6 +13,9 @@ st.title("Cameron is a superstar Basketball player!")
 #adding discription to your website
 st.text('eastliverpool potters')
 
+
+
+
 #Thesis here
 st.header('Thesis')
 st.text('Add your Thesis here')
@@ -29,7 +32,32 @@ df = pd.read_csv("cbb.csv")
 st.table(df.head())
 st.text('Showing dataset and writting about it here')
 
+## Data Description
 
+
+st.write("""1. CONF : The Athletic Conference in which the school participates in 
+2.G : Number of Games playes 
+3.W :  Number of Games Won 
+4. ADJOE : Points scored per 100 possessions 
+5. ADJDE : Adjusted Defensive Efficiency 
+6. BARTHAG : Power Rating 
+7. EFG_O : Effective Field Goal Percentage Shot
+8. EFG_D : Effective Field Goal Percentage Allowed
+9.TOR : Turnover Percentage Allowed
+10. TORD : Turnover Percentage Committed
+11. ORB : Offensive Rebound Rate 
+12. DRB : Defensive Rebound Rate 
+13. FTR : Free Throw Rate 
+14. FTRD : Free throw Rate Allowed 
+15. 2P_O : Two Point Shooting Percentage 
+16. 2P_D : Two Point Shooting Percentage allowed 
+17. 3P_O: 3 Point shooting percentage 
+18. 3P_D: 3 point shooting perecentage allowed 
+19. ADJ_T : Adjusted Tempo 
+20. WAB : Wins above bubble 
+21. POSTSEASON : Round where the given team was eliminated or where their season ended
+22. SEED : Seed in the NCAA Tournament
+23. Year : Season """)
 #Adding images to make your streamlit look visually better!
 st.image('pro.png')
 st.text('You can add photos with descriptions')
