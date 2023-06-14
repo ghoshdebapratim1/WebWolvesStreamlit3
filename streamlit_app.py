@@ -7,7 +7,6 @@ import plotly.express as px
 #import plotly.figure_factory as ff
 
 #look for more information here https://docs.streamlit.io/library/cheatsheet
-
 #adding title
 st.title("Cameron is a superstar Basketball player!")
 
@@ -88,6 +87,14 @@ st.header('Melanie Question : what was texas tech free throw rate in 2019 ')
 st.header('Livia Question : how many games has the wissconson played in the year of 2015?')
 st.header('Cameron Estell : what was the point shooting percentage last season for the wisconsin')
 st.header('Natalia Question : what was gonzas turn over percentage commited in 2017')
+
+
+st.header('Deb Question : What is the relationship between offensive rebound rate and defensive rebound rate')
+
+df_plot=df[['ORB','DRB']]
+fig=px.scatter(df,x='ORB',y='DRB')
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
 #adding graphs by making plotly_Chart
 # Plot!
 #st.plotly_chart(BostonHousing, use_container_width=True)
