@@ -30,13 +30,13 @@ df = pd.read_csv("cbb.csv")
 
 #showing dataset
 st.table(df.head())
-st.text('Showing dataset and writting about it here')
+
 
 ## Data Description
 
 
 st.write("""1. CONF : The Athletic Conference in which the school participates in 
-2.G : Number of Games playes 
+2.G : Number of Games playesd
 3.W :  Number of Games Won 
 4. ADJOE : Points scored per 100 possessions 
 5. ADJDE : Adjusted Defensive Efficiency 
@@ -65,9 +65,14 @@ st.text('You can add photos with descriptions')
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
 #adding graphs by images
-st.image('pasted image 0.png')
-st.text('Discription about your graph and visualizations')
+st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
+st.header("Gemma Question : what was North Carolina's power rating in 2016?? ")
+st.header('Cameron Conley Question : How many freethrows have the lakers made? ')
+st.header('Melanie Question : what was texas tech free throw rate in 2019 ')
+st.header('Livia Question : how many games has the wissconson played in the year of 2015?')
+st.header('Cameron Estell : what was the point shooting percentage last season for the wisconsin')
+st.header('Natalia Question : what was gonzas turn over percentage commited in 2017')
 #adding graphs by making plotly_Chart
 # Plot!
 #st.plotly_chart(BostonHousing, use_container_width=True)
