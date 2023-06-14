@@ -15,12 +15,6 @@ st.text('eastliverpool potters')
 
 
 
-
-#Thesis here
-st.header('Thesis')
-st.text('Add your Thesis here')
-
-
 #SHOWING THE DATA
 #dataset Header
 st.header('Dataset')
@@ -63,7 +57,7 @@ st.write("""1. CONF : The Athletic Conference in which the school participates i
 # st.text('You can add photos with descriptions')
 st.header('Cleaning and Pre-processing the data')
 
-st.write(df.info())
+st.table(df.info())
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
 #adding graphs by images
