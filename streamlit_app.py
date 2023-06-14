@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import plotly.express as px
 #import plotly.figure_factory as ff
 
 #look for more information here https://docs.streamlit.io/library/cheatsheet
@@ -62,6 +63,12 @@ st.table(df.info())
 #adding images
 #adding graphs by images
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
+
+count = df.groupby("TEAM")[["W"]].sum().reset_index()
+count = count.sort_values(by="W", ascending=False).head(15)
+fig = px.bar(count, x="TEAM", y="W")
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
 
 st.header("Gemma Question : what was North Carolina's power rating in 2016?? ")
 st.header('Cameron Conley Question : How many freethrows have the lakers made? ')
