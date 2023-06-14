@@ -25,20 +25,6 @@ st.header('Dataset')
 #add your dataset (delete dataset this is an example)
 BostonHousing = pd.read_csv("BostonHousing.csv")
 
-#showing dataset
-st.table(BostonHousing.head())
-st.text('Showing dataset and writting about it here')
-
-
-#Adding images to make your streamlit look visually better!
-st.image('pro.png')
-st.text('You can add photos with descriptions')
-
-#Adding 3-6 Visualizations using photos collected and made from your graph
-#adding images
-#adding graphs by images
-st.image('pasted image 0.png')
-st.text('Discription about your graph and visualizations')
 
 #adding graphs by making plotly_Chart
 # Plot!
