@@ -59,9 +59,11 @@ st.write("""1. CONF : The Athletic Conference in which the school participates i
 22. SEED : Seed in the NCAA Tournament
 23. Year : Season """)
 #Adding images to make your streamlit look visually better!
-st.image('pro.png')
-st.text('You can add photos with descriptions')
+# st.image('pro.png')
+# st.text('You can add photos with descriptions')
+st.header('Cleaning and Pre-processing the data')
 
+st.write(df.info())
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
 #adding graphs by images
