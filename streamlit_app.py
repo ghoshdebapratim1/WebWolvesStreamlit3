@@ -95,6 +95,16 @@ df_plot=df[['ORB','DRB']]
 fig=px.scatter(df,x='ORB',y='DRB')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
+
+
+st.header('Deb Question : Which team has the highest power rating in 2019?')
+
+df_plot=df[df['YEAR']==2019]
+power_rating=df_plot.groupby('TEAM')['BARTHAG'].max().reset_index()
+power_rating.sort_values(by='BARTHAG',ascending=False)
+fig=px.bar(power_rating,x='TEAM',y='BARTHAG')
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
 #adding graphs by making plotly_Chart
 # Plot!
 #st.plotly_chart(BostonHousing, use_container_width=True)
