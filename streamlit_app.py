@@ -65,9 +65,9 @@ st.table(df.info())
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
 df_plot=df[df['TEAM']=='Gonzaga']
-count = df_plot.groupby("Year")[["W"]].sum().reset_index()
+count = df_plot.groupby("YEAR")[["W"]].sum().reset_index()
 count = count.sort_values(by="W", ascending=False).head(15)
-fig = px.bar(count, x="Year", y="W")
+fig = px.bar(count, x="YEAR", y="W")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
