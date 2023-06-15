@@ -29,7 +29,9 @@ st.table(df.head())
 ## Data Description
 
 
-st.write("""1. CONF : The Athletic Conference in which the school participates in 
+st.write("""
+0. TEAM : Team Name 
+1. CONF : The Athletic Conference in which the school participates in 
 2.G : Number of Games playesd
 3.W :  Number of Games Won 
 4. ADJOE : Points scored per 100 possessions 
@@ -114,6 +116,25 @@ df_plot=df[['CONF','G']]
 totConf=df_plot.groupby("CONF")[['G']].sum().reset_index()
 fig = px.pie(totConf,values="G",names="CONF")
 st.plotly_chart(fig)
+
+
+st.write('The three conferences with the highest games played is ACC, SEC, and A10')
+
+
+### Heatmap 
+
+st.header('Team vs Conference Games Won Heatmap ')
+
+df_plot=df[['TEAM','CONF','W']]
+
+gamesWon=df_plot.groupby(['TEAM','CONF'])[['W']].sum().reset_index()
+
+gamesWon=pd.pivot_table(gamesWon, values = 'W', index=['TEAM'], columns = 'CONF').reset_index()
+
+fig = px.imshow(gamesWon)
+st.plotly_chart(fig)
+
+
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
 ## Filtering out the team gonzaga from our dataset 
