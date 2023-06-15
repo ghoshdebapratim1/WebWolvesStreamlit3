@@ -80,6 +80,13 @@ fig=px.histogram(df_plot,'G')
 st.plotly_chart(fig)
 
 
+###### Scatter Plot 
+st.header('Relationship between games won and ADJOE')
+
+df_plot=df[['W','ADJOE']]
+fig=px.scatter(df_plot,x='W',y='ADJOE')
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
 
 
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
