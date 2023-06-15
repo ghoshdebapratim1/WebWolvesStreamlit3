@@ -88,6 +88,21 @@ fig=px.scatter(df_plot,x='W',y='ADJOE')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
+st.write('If in a game I have a higher amout of points scored it is high likely I will win the game. ')
+
+
+###### Bar Chart Plot 
+st.header('Defensive Rebound rate of the top 15 teams')
+
+df_plot=df[['TEAM','DRB']]
+## We want to Sum the number of wins by the team gonzaga for each year.
+avgdrb = df_plot.groupby("TEAM")[["DRB"]].mean().reset_index()
+avgdrb = avgdrb.sort_values(by="DRB", ascending=False).head(15)
+fig = px.bar(avgdrb, x="TEAM", y="DRB")
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
+
+
 
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
