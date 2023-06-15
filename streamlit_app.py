@@ -71,8 +71,13 @@ fig = px.box(df_plot, y="G")
  
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
-## Histogram 
 
+## Histogram 
+df.hist(bin=5)
+
+fig=px.histogram(df_plot,'G')
+
+st.plotly_chart(fig)
 
 
 
