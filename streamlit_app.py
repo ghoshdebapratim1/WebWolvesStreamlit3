@@ -112,7 +112,7 @@ st.header('Which conference has the highest number of games?')
 df_plot=df[['CONF','G']]
 
 totConf=df_plot.groupby("CONF")[['G']].sum().reset_index()
-fig = px.pie(values="G",names="CONF")
+fig = px.pie(totConf,values="G",names="CONF")
 st.plotly_chart(fig)
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
