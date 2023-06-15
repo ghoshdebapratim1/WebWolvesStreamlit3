@@ -61,6 +61,22 @@ st.table(df.info())
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
 #adding graphs by images
+
+st.header('How are the number of games won distributed? ')
+
+## Box Plot 
+df_plot=df['G']
+
+fig = px.box(df_plot, y="G")
+ 
+fig.update_layout(xaxis_tickangle=-90)
+st.plotly_chart(fig)
+## Histogram 
+
+
+
+
+
 st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
 
 ## Filtering out the team gonzaga from our dataset 
@@ -105,6 +121,9 @@ power_rating=power_rating.sort_values(by='BARTHAG',ascending=False).head(15)
 fig=px.bar(power_rating,x='TEAM',y='BARTHAG')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
+
+
+
 #adding graphs by making plotly_Chart
 # Plot!
 #st.plotly_chart(BostonHousing, use_container_width=True)
