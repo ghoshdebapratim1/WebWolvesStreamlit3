@@ -68,7 +68,6 @@ st.write("""
 # st.text('You can add photos with descriptions')
 
 
-st.table(df.info())
 #Adding 3-6 Visualizations using photos collected and made from your graph
 #adding images
 #adding graphs by images
@@ -161,7 +160,7 @@ st.markdown("- The most games Gonzaga have won in a season is 37. ")
 st.markdown("- the least amount of games they have won is 27 ")
 st.markdown("- the season they won the most was 2017")
 
-st.header("what was North Carolina's power rating in 2016?? ")
+st.header("what was North Carolina's power rating over the years?? ")
 
 df_plot=df[df['TEAM']=='North Carolina']
 pr = df_plot.groupby("YEAR")[["BARTHAG"]].sum().reset_index()
@@ -170,7 +169,11 @@ fig = px.bar(pr, x="YEAR", y="BARTHAG")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
-st.header('what was the point shooting percentage last season for the wisconsin')
+
+st.write("North Carolina had the same power rating in the years 2015,2016,2017 and 2019")
+
+
+st.header('what was the point shooting percentage over the  seasons for the wisconsin')
 
 df_plot=df[df['TEAM']=='Wisconsin']
 
@@ -181,6 +184,11 @@ twopo=df_plot.groupby('YEAR')[['2P_O']].mean().reset_index()
 fig=px.bar(twopo,x="YEAR",y='2P_O')
 st.plotly_chart(fig)
 
+st.markdown("- Wisconsin had very close 2 point shooting percentage in the years 2017 and 2018 ")
+
+
+st.markdown("- Wisconsin had the highest 2 point shooting percentage in 2015 while in the very next season they had the lowest 2 point shooting percentage. ")
+
 st.header('What is the relationship between offensive rebound rate and defensive rebound rate')
 
 df_plot=df[['ORB','DRB']]
@@ -188,6 +196,7 @@ fig=px.scatter(df,x='ORB',y='DRB')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
+st.write('The linear relationship between offensive rebound rate and defensive rebound rate is very weak.')
 
 st.header('Which team has the highest power rating in 2019?')
 
@@ -199,6 +208,7 @@ fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
 
+st.write('Gonzaga has the highest power rating in 2019')
 
 #adding graphs by making plotly_Chart
 # Plot!
@@ -207,5 +217,10 @@ st.plotly_chart(fig)
 
 
 #adding conclusions
-st.header('Conclusion')
-st.text('add your conclusion here')
+st.header('Summary')
+st.markdown('- The median number of games played is around 31')
+st.markdown('- There is a strong linear relationship between ADJOE and the number of games won')
+st.markdown('- Fairleigh Dickinson is the most defensive team in the roster')
+st.markdown('- ACC is the conference with the highest number of games played')
+st.markdown('- Gonzaga had its peak season in 2017')
+st.markdown('- Gonzaga also has the highest power rating among all teams in the roster.')
