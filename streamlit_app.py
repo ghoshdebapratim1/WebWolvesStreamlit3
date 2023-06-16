@@ -18,7 +18,7 @@ st.header('Team Members')
 
 st.markdown("- Gemma")
 st.markdown("- Cameron Estell")
-st.markdown("- Cameron Conway")
+st.markdown("- Cameron Conely")
 st.markdown("- Livia")
 st.markdown("- Natalia")
 st.markdown("- Melanie")
@@ -66,7 +66,7 @@ st.write("""
 #Adding images to make your streamlit look visually better!
 # st.image('pro.png')
 # st.text('You can add photos with descriptions')
-st.header('Cleaning and Pre-processing the data')
+
 
 st.table(df.info())
 #Adding 3-6 Visualizations using photos collected and made from your graph
@@ -164,13 +164,16 @@ fig = px.bar(pr, x="YEAR", y="BARTHAG")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
-st.header('Cameron Conley Question : How many freethrows have the lakers made? ')
-st.header('Melanie Question : what was texas tech free throw rate in 2019 ')
-
-st.header('Livia Question : how many games has the wissconson played in the year of 2015?')
 st.header('Cameron Estell : what was the point shooting percentage last season for the wisconsin')
-st.header('Natalia Question : what was gonzas turn over percentage commited in 2017')
 
+df_plot=df[df['TEAM']=='Wisconsin']
+
+df_plot=df_plot[['YEAR','2P_O']]
+
+twopo=df_plot.groupby('YEAR')[['2P_O']].mean().reset_index()
+
+fig=px.bar(twopo,x="YEAR",y='2P_O')
+st.plotly_chart(fig)
 
 st.header('Deb Question : What is the relationship between offensive rebound rate and defensive rebound rate')
 
