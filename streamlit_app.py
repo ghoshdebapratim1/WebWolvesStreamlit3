@@ -83,6 +83,7 @@ fig = px.box(df_plot, y="G")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
+st.write('The 75th percentile (or upper quantile) is 37 , the median is 31 and the lower quantile is 26.')
 ## Histogram 
 #df.hist(bin=5)
 
@@ -90,6 +91,7 @@ fig=px.histogram(df_plot,'G')
 
 st.plotly_chart(fig)
 
+st.write(" Most teams have played games between 24 and 40 games")
 
 ###### Scatter Plot 
 st.header('Relationship between games won and ADJOE')
@@ -99,7 +101,7 @@ fig=px.scatter(df_plot,x='W',y='ADJOE')
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
-st.write('If in a game I have a higher amout of points scored it is high likely I will win the game. ')
+st.write('If in a game a team have a higher amount of points scored it is highly likely that team will win the game. ')
 
 
 ###### Bar Chart Plot 
@@ -132,19 +134,19 @@ st.write('The three conferences with the highest games played is ACC, SEC, and A
 
 ### Heatmap 
 
-st.header('Team vs Conference Games Won Heatmap ')
+# st.header('Team vs Conference Games Won Heatmap ')
 
-df_plot=df[['TEAM','CONF','W']]
+# df_plot=df[['TEAM','CONF','W']]
 
-gamesWon=df_plot.groupby(['TEAM','CONF'])[['W']].sum().reset_index()
+# gamesWon=df_plot.groupby(['TEAM','CONF'])[['W']].sum().reset_index()
 
-gamesWon=pd.pivot_table(gamesWon, values = 'W', index=['TEAM'], columns = 'CONF').reset_index()
+# gamesWon=pd.pivot_table(gamesWon, values = 'W', index=['TEAM'], columns = 'CONF').reset_index()
 
-fig = px.imshow(gamesWon)
-st.plotly_chart(fig)
+# fig = px.imshow(gamesWon)
+# st.plotly_chart(fig)
 
 
-st.header('Gemma Question : How many games have Gonzaga won over different seasons? ')
+st.header('How many games have Gonzaga won over different seasons? ')
 
 ## Filtering out the team gonzaga from our dataset 
 df_plot=df[df['TEAM']=='Gonzaga']
@@ -155,7 +157,11 @@ fig = px.bar(count, x="YEAR", y="W")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
-st.header("Gemma Question : what was North Carolina's power rating in 2016?? ")
+st.markdown("- The most games Gonzaga have won in a season is 37. ")
+st.markdown("- the least amount of games they have won is 27 ")
+st.markdown("- the season they won the most was 2017")
+
+st.header("what was North Carolina's power rating in 2016?? ")
 
 df_plot=df[df['TEAM']=='North Carolina']
 pr = df_plot.groupby("YEAR")[["BARTHAG"]].sum().reset_index()
@@ -164,7 +170,7 @@ fig = px.bar(pr, x="YEAR", y="BARTHAG")
 fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
-st.header('Cameron Estell : what was the point shooting percentage last season for the wisconsin')
+st.header('what was the point shooting percentage last season for the wisconsin')
 
 df_plot=df[df['TEAM']=='Wisconsin']
 
@@ -175,7 +181,7 @@ twopo=df_plot.groupby('YEAR')[['2P_O']].mean().reset_index()
 fig=px.bar(twopo,x="YEAR",y='2P_O')
 st.plotly_chart(fig)
 
-st.header('Deb Question : What is the relationship between offensive rebound rate and defensive rebound rate')
+st.header('What is the relationship between offensive rebound rate and defensive rebound rate')
 
 df_plot=df[['ORB','DRB']]
 fig=px.scatter(df,x='ORB',y='DRB')
@@ -183,7 +189,7 @@ fig.update_layout(xaxis_tickangle=-90)
 st.plotly_chart(fig)
 
 
-st.header('Deb Question : Which team has the highest power rating in 2019?')
+st.header('Which team has the highest power rating in 2019?')
 
 df_plot=df[df['YEAR']==2019]
 power_rating=df_plot.groupby('TEAM')['BARTHAG'].max().reset_index()
