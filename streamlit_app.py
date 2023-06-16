@@ -8,12 +8,20 @@ import plotly.express as px
 
 #look for more information here https://docs.streamlit.io/library/cheatsheet
 #adding title
-st.title("Cameron is a superstar Basketball player!")
+st.title("Basketball over the years")
 
 #adding discription to your website
-st.text('eastliverpool potters')
+st.write('All about basketball')
 
 
+st.header('Team Members')
+
+st.markdown("- Gemma")
+st.markdown("- Cameron Estell")
+st.markdown("- Cameron Conway")
+st.markdown("- Livia")
+st.markdown("- Natalia")
+st.markdown("- Melanie")
 
 #SHOWING THE DATA
 #dataset Header
@@ -28,6 +36,7 @@ st.table(df.head())
 
 ## Data Description
 
+st.header('Dataset Column Description')
 
 st.write("""
 0. TEAM : Team Name 
